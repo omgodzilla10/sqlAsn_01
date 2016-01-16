@@ -1,8 +1,0 @@
-SQL Assignment #1
-
-Required Database tables: (* - Primary Key)
-
-Hotel (hotelNo*, hotelName, city)
-Room (roomNo*, hotelNo*, type, price)
-Booking (hotelNo*, guestNo*, dateFrom*, dateTo, roomNo)
-Guest (guestNo*, guestName, guestAddress)

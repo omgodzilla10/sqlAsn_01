@@ -15,3 +15,8 @@ CREATE TABLE Hotel
 ,city			VARCHAR2(20)	NOT NULL
 ,CONSTRAINT PKHotel PRIMARY KEY (hotelNo)
 );
+
+CREATE TABLE Room
+(
+
+);
