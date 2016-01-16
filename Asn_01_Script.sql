@@ -26,8 +26,8 @@ CREATE TABLE Room
 );
 
 CREATE TABLE Guest
-(hotelNo		DECIMAL(8)		NOT NULL
+(guestNo		DECIMAL(12)		NOT NULL
 ,guestName		VARCHAR2(30)	NOT NULL
 ,guestAddress	VARCHAR2(40)	NOT NULL
 ,CONSTRAINT PKGuest PRIMARY KEY (guestNo)
-)
+);
