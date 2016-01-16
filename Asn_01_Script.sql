@@ -1,0 +1,17 @@
+SET ECHO ON
+
+SPOOL C:\Users\Trevor\Documents\GitHub\sqlAsn_01\Asn_01_Spool.txt
+
+ALTER SESSION SET NLS_DATE_FORMAT='YYYY-MM-DD';
+
+DROP TABLE Hotel;
+DROP TABLE Room;
+DROP TABLE Booking;
+DROP TABLE Guest;
+
+CREATE TABLE Hotel
+(hotelNo		CHAR(8)			NOT NULL
+,hotelName		VARCHAR2(30)	NOT NULL
+,city			VARCHAR2(20)	NOT NULL
+,CONSTRAINT PKHotel PRIMARY KEY (hotelNo)
+);
