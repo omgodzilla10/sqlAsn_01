@@ -62,4 +62,21 @@ SQL> CREATE TABLE Guest
 Table created.
 
 SQL> 
+SQL> CREATE TABLE Booking
+  2  (,hotelNo		     DECIMAL(8) 	     NOT NULL
+  3   ,guestNo	     DECIMAL(12)	     NOT NULL
+  4   ,dateFrom      DATE	     NOT NULL
+  5   ,dateTo	     DATE	     NOT NULL
+  6   ,roomNo	     DECIMAL(4)      NOT NULL
+  7   ,CONSTRAINT PKHotel PRIMARY KEY (dateFrom)
+  8   ,CONSTRAINT FKHotelNo FOREIGN KEY (hotelNo) REFERENCES Hotel(roomNo)
+  9   ,CONSTRAINT FKGuestNo FOREIGN KEY (guestNo) REFERENCES Guest(guestNo)
+ 10   );
+(,hotelNo		DECIMAL(8)		NOT NULL
+ *
+ERROR at line 2:
+ORA-00904: : invalid identifier 
+
+
+SQL> 
 SQL> SPOOL OFF
