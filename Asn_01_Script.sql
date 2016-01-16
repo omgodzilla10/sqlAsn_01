@@ -32,4 +32,15 @@ CREATE TABLE Guest
 ,CONSTRAINT PKGuest PRIMARY KEY (guestNo)
 );
 
+CREATE TABLE Booking
+(,hotelNo		DECIMAL(8)		NOT NULL
+ ,guestNo    	DECIMAL(12)		NOT NULL
+ ,dateFrom      DATE            NOT NULL
+ ,dateTo        DATE            NOT NULL
+ ,roomNo        DECIMAL(4)      NOT NULL
+ ,CONSTRAINT PKHotel PRIMARY KEY (dateFrom)
+ ,CONSTRAINT FKHotelNo FOREIGN KEY (hotelNo) REFERENCES Hotel(roomNo)
+ ,CONSTRAINT FKGuestNo FOREIGN KEY (guestNo) REFERENCES Guest(guestNo)
+ );
+ 
 SPOOL OFF
