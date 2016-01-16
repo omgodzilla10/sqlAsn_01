@@ -1,0 +1,65 @@
+SQL> 
+SQL> ALTER SESSION SET NLS_DATE_FORMAT='YYYY-MM-DD';
+
+Session altered.
+
+SQL> 
+SQL> DROP TABLE Hotel;
+
+Table dropped.
+
+SQL> DROP TABLE Room;
+DROP TABLE Room
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> DROP TABLE Booking;
+DROP TABLE Booking
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> DROP TABLE Guest;
+
+Table dropped.
+
+SQL> 
+SQL> CREATE TABLE Hotel
+  2  (hotelNo		     DECIMAL(8) 	     NOT NULL
+  3  ,hotelName 	     VARCHAR2(30)    NOT NULL
+  4  ,city		     VARCHAR2(20)    NOT NULL
+  5  ,CONSTRAINT PKHotel PRIMARY KEY (hotelNo)
+  6  );
+
+Table created.
+
+SQL> 
+SQL> CREATE TABLE Room
+  2  (roomNo		     DECIMAL(4) 	     NOT NULL
+  3  ,hotelNo		     DECIMAL(8) 	     NOT NULL
+  4  ,rmType		     VARCHAR2(20)    NOT NULL CHECK(rmType == 'Double' OR rmType == 'Family' OR rmType == 'Single')
+  5  ,price		     DECIMAL(10, 2)  NOT NULL
+  6  ,CONSTRAINT PKRoom PRIMARY KEY (roomNo)
+  7  ,CONSTRAINT FKHotelNo FOREIGN KEY (hotelNo) REFERENCES Hotel (roomNo)
+  8  );
+,rmType			VARCHAR2(20)	NOT NULL CHECK(rmType == 'Double' OR rmType == 'Family' OR rmType == 'Single')
+       			            	                       *
+ERROR at line 4:
+ORA-00936: missing expression 
+
+
+SQL> 
+SQL> CREATE TABLE Guest
+  2  (guestNo		     DECIMAL(12)	     NOT NULL
+  3  ,guestName 	     VARCHAR2(30)    NOT NULL
+  4  ,guestAddress   VARCHAR2(40)    NOT NULL
+  5  ,CONSTRAINT PKGuest PRIMARY KEY (guestNo)
+  6  );
+
+Table created.
+
+SQL> 
+SQL> SPOOL OFF
