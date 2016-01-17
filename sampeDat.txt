@@ -1,0 +1,20 @@
+hotelNo		hotelName			City
+1234		'The Grand Vista'	'Vancouver, BC'
+1235		'The Vast Horizon'	'Vancouver, BC'
+1236		'The Grand Budapest''Vancouver, BC'
+
+roomNo		hotelNo		roomType		price
+001			1234		'Family'			50
+002			1234		'Single'			30
+001			1235		'Double'		60
+001			1236		'Family'			90
+
+guestNo		guestName			guestAddress
+123			'Trevor Hoefsloot'	'151 Road Rd.'
+321			'Darren Chan'		'515 Street St.'
+234			'Stannus Baratheon'	'999 Avenue Ave.'
+
+hotelNo		guestNo		dateFrom	dateTo		roomNo
+1234		123			2016-01-01	2016-01-06	001
+1234		321			2016-01-01	2016-01-05	002
+1235		234			2016-01-01	2016-01-04	001
