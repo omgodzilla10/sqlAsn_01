@@ -45,4 +45,9 @@ CREATE TABLE Booking
  ,CONSTRAINT FKGuestNo FOREIGN KEY (guestNo) REFERENCES Guest(guestNo)
  );
  
+ CREATE ASSERTION RoomsCannotDoubleBook
+	CHECK (SELECT hotelNo
+	FROM Booking
+	GROUP BY hotelNo, roomNo
+ 
 SPOOL OFF
