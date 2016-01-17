@@ -44,5 +44,5 @@ CREATE TABLE Booking
  ,CONSTRAINT FKBookingHotelNo FOREIGN KEY (hotelNo) REFERENCES Hotel(hotelNo)
  ,CONSTRAINT FKGuestNo FOREIGN KEY (guestNo) REFERENCES Guest(guestNo)
  );
- 
+
 SPOOL OFF
